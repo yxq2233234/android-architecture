@@ -24,6 +24,7 @@ class AddEditTaskFragment : Fragment(), AddEditTaskListener {
 
         val binding = AddEditTaskFragmentBinding.inflate(inflater, container, false).apply {
             viewmodel = viewModel
+            lifecycleOwner = this@AddEditTaskFragment
         }
 
         return binding.root

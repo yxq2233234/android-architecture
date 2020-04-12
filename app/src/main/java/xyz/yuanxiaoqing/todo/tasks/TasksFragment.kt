@@ -24,6 +24,7 @@ class TasksFragment : Fragment(), TasksListener {
         viewModel = TasksViewModel(this)
         binding = TasksFragmentBinding.inflate(inflater, container, false).apply {
             viewmodel = viewModel
+            lifecycleOwner = this@TasksFragment
         }
         setupListAdapter()
 

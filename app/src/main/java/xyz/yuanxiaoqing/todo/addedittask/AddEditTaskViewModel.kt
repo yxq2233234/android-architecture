@@ -15,6 +15,7 @@ class AddEditTaskViewModel(val addEditTaskListener: AddEditTaskListener) : ViewM
 
     fun saveTask(view: View) {
         Log.d("AddEditTaskViewModel", "title = ${title.value} description = ${description.value}")
+
         if (title.value.isNullOrEmpty() || description.value.isNullOrEmpty()) {
             addEditTaskListener.onToast("标题和描述不能为空！")
             return
@@ -22,6 +23,5 @@ class AddEditTaskViewModel(val addEditTaskListener: AddEditTaskListener) : ViewM
         Tasks.tasks = Tasks.tasks + Task(title.value!!, description.value!!)
         addEditTaskListener.onTasksUpdated()
     }
-
 
 }
